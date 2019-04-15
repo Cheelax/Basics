@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Q001Objective02 : MonoBehaviour
+public class Q001Objective03 : MonoBehaviour
 {
     public float TheDistance;
 
-    public GameObject TreasureChest;
-    public GameObject ActionDisplay;
+    public GameObject FakeSword;
+    public GameObject RealSword;
     public GameObject ActionText;
+    public GameObject ActionDisplay;
     public GameObject TheObjective;
     public int CloseObjective;
-    public GameObject TakeSword;
 
     void Update()
     {
@@ -36,7 +36,7 @@ public class Q001Objective02 : MonoBehaviour
     {
         if (this.TheDistance <= 3)
         {
-            ActionText.GetComponent<Text>().text = "Open Chest";
+            ActionText.GetComponent<Text>().text = "Take Sword";
             ActionText.SetActive(true);
             ActionDisplay.SetActive(true);
         }
@@ -44,8 +44,8 @@ public class Q001Objective02 : MonoBehaviour
         if (Input.GetButtonDown("Action"))
         {
             this.GetComponent<BoxCollider>().enabled = false;
-            TreasureChest.GetComponent<Animation>().Play("Q01ChestOpen");
-            TakeSword.SetActive(true);
+            FakeSword.SetActive(false);
+            RealSword.SetActive(true);
             CloseObjective = 3;
             ActionText.SetActive(false);
             ActionDisplay.SetActive(false);
