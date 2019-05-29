@@ -14,6 +14,9 @@ public class Q001Objective03 : MonoBehaviour
     public GameObject TheObjective;
     public int CloseObjective;
 
+    public GameObject QuestComplete;
+    public GameObject Exmark;
+
     void Update()
     {
         this.TheDistance = PlayerCasting.DistanceFromTarget;
@@ -49,6 +52,8 @@ public class Q001Objective03 : MonoBehaviour
             CloseObjective = 3;
             ActionText.SetActive(false);
             ActionDisplay.SetActive(false);
+            QuestComplete.SetActive(true);
+            Exmark.SetActive(true);
         }
     }
 

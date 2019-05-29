@@ -16,8 +16,16 @@ public class Quest001Buttons : MonoBehaviour
     public GameObject Objective02;
     public GameObject Objective03;
 
+    public GameObject Exmark;
+    public GameObject TheNotice;
+    public GameObject NoticeTrigger;
+
     IEnumerator SetQuestUI()
     {
+        Exmark.SetActive(false);
+        TheNotice.SetActive(false);
+        NoticeTrigger.SetActive(false);
+
         ActiveQuestBox.GetComponent<Text>().text = "My First Weapon";
         Objective01.GetComponent<Text>().text = "Reach the clearing in the wood";
         Objective02.GetComponent<Text>().text = "Open the chest";

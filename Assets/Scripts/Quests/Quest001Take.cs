@@ -27,11 +27,12 @@ public class Quest001Take : MonoBehaviour
         {
             ActionDisplay.SetActive(true);
             ActionText.SetActive(true);
+            AttackBlocker.BlockSword = 1;
 
-            
         }
         if (Input.GetButtonDown("Action"))
-            {
+        {
+                AttackBlocker.BlockSword = 2;
                 ActionDisplay.SetActive(false);
                 ActionText.SetActive(false);
 
@@ -46,6 +47,7 @@ public class Quest001Take : MonoBehaviour
 
     void OnMouseExit()
     {
+        AttackBlocker.BlockSword = 0;
         ActionDisplay.SetActive(false);
         ActionText.SetActive(false);
     }
